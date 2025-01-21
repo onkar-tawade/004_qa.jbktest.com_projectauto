@@ -1,0 +1,22 @@
+package PageObjectModelPackage;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class _8DashboardFunc {
+
+	WebDriver driver;
+	public _8DashboardFunc(WebDriver driver) {
+		this.driver=driver;
+		PageFactory.initElements(driver,this);
+	}
+	
+	
+	@FindBy(xpath = "//input[@id='name']") WebElement pName;
+		
+	public void checkProfile(String n) {
+		pName.sendKeys(n);;
+	}
+}
